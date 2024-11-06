@@ -36,7 +36,7 @@ const InitialLayout = () => {
     if (isSignedIn && !inAuthGroup) {
       router.replace("/home");
     } else if (!isSignedIn) {
-      router.replace("/login");
+      router.replace("/sign-in/view");
     }
   }, [isSignedIn]);
 
