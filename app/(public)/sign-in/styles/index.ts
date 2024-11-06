@@ -8,7 +8,9 @@ const GoogleIcon = styled(GoogleIconImport).attrs({})``;
 const AppleIcon = styled(AppleIconImport).attrs({})``;
 const FacebookIcon = styled(FacebookIconImport).attrs({})``;
 const MatchIcon = styled(MatchIconImport).attrs({})``;
-const ChevronRightIcon = styled(ChevronRightIconImport).attrs({})``;
+const ChevronRightIcon = styled(ChevronRightIconImport).attrs({})`
+  margin-left: 8px;
+`;
 
 import { LinearGradient } from "expo-linear-gradient";
 import styled from "styled-components/native";
