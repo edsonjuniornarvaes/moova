@@ -1,27 +1,27 @@
-import { Stack } from "expo-router"
+import { Stack } from "expo-router";
 
-export default function PublicLayout(){
-  return(
+export default function PublicLayout() {
+  return (
     <Stack
       screenOptions={{
-        headerStyle:{
+        headerStyle: {
           backgroundColor: "#121212",
         },
         headerTintColor: "#FFF",
       }}
     >
-      <Stack.Screen 
-        name="login"
+      <Stack.Screen
+        name="sign-in/view"
         options={{
-          headerShown: false
+          headerShown: false,
         }}
       />
-      <Stack.Screen 
+      <Stack.Screen
         name="register"
         options={{
-          headerTitle: "Criar conta"
+          headerTitle: "Criar conta",
         }}
       />
     </Stack>
-  )
+  );
 }
