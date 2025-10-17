@@ -38,9 +38,9 @@ export default function Login() {
   }
 
   return (
-    <S.GradientContainer colors={["#00BFFF", "#32CD32"]}>
+    <S.GradientContainer colors={["#00ADEF", "#7BE495"]}>
       <S.TopContent>
-        <S.MatchIcon />
+        <S.MoovaIcon />
       </S.TopContent>
       <S.BottomContent>
         <S.TitleContainer>

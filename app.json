@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "match",
-    "slug": "match",
+    "name": "moova",
+    "slug": "moova",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

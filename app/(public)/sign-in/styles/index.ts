@@ -1,5 +1,5 @@
 import ChevronRightIconImport from "@/components/icons/chevron-right";
-import MatchIconImport from "@/components/icons/match";
+import MoovaIconImport from "@/components/icons/moova";
 import GoogleIconImport from "@/components/icons/google";
 import AppleIconImport from "@/components/icons/apple";
 import FacebookIconImport from "@/components/icons/facebook";
@@ -7,7 +7,7 @@ import FacebookIconImport from "@/components/icons/facebook";
 const GoogleIcon = styled(GoogleIconImport).attrs({})``;
 const AppleIcon = styled(AppleIconImport).attrs({})``;
 const FacebookIcon = styled(FacebookIconImport).attrs({})``;
-const MatchIcon = styled(MatchIconImport).attrs({})``;
+const MoovaIcon = styled(MoovaIconImport).attrs({})``;
 const ChevronRightIcon = styled(ChevronRightIconImport).attrs({})``;
 
 import { LinearGradient } from "expo-linear-gradient";
@@ -134,7 +134,7 @@ export {
   GoogleIcon,
   AppleIcon,
   FacebookIcon,
-  MatchIcon,
+  MoovaIcon,
   LineContainer,
   LineText,
   SocialButtonContainer,
