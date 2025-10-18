@@ -1,6 +1,5 @@
 import Splash from "@/components/Splash";
 import { useSplash } from "@/contexts/SplashContext";
-import { ActivityIndicator, Text, View } from "react-native";
 import { preventAutoHideAsync } from "expo-splash-screen";
 
 preventAutoHideAsync();
@@ -8,24 +7,12 @@ preventAutoHideAsync();
 export default function Index() {
   const { splashComplete } = useSplash();
 
-  return (
-    <>
-      {splashComplete ? (
-        <View>
-          <Text>Home Screen</Text>
-        </View>
-      ) : (
-        <Splash />
-      )}
-      {/* <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <ActivityIndicator size={40} color={"#121212"}/>
-    </View> */}
-    </>
-  );
+  // Se a splash não estiver completa, mostra a splash
+  if (!splashComplete) {
+    return <Splash />;
+  }
+
+  // Se a splash estiver completa, não mostra nada
+  // O _layout.tsx vai redirecionar automaticamente
+  return null;
 }

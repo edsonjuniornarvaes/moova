@@ -9,12 +9,6 @@ const socialButtonContent = [
   {
     icon: <S.GoogleIcon />,
   },
-  {
-    icon: <S.AppleIcon />,
-  },
-  {
-    icon: <S.FacebookIcon />,
-  },
 ];
 
 export default function Login() {
@@ -41,44 +35,42 @@ export default function Login() {
     <S.GradientContainer colors={["#00ADEF", "#7BE495"]}>
       <S.TopContent>
         <S.MoovaIcon />
+        <S.TitleContainer>
+          <S.Title>Juntos, em movimento</S.Title>
+        </S.TitleContainer>
       </S.TopContent>
       <S.BottomContent>
-        <S.TitleContainer>
-          <S.Title>
-            Encontre seu esporte favorito, reuna a galera e organize sua partida
-          </S.Title>
-        </S.TitleContainer>
         <S.ButtonContainer>
           <S.Button>
-            <S.ButtonTitle>Acessar com celular</S.ButtonTitle>
-            <S.ChevronRightIcon />
+            <S.ButtonTitle>Acessar com e-mail</S.ButtonTitle>
           </S.Button>
         </S.ButtonContainer>
-        <S.LineContainer>
-          <S.GradientLine
-            colors={["rgba(224, 224, 224, 0)", "rgba(224, 224, 224, 1)"]}
-            start={{ x: 0, y: 0.5 }}
-            end={{ x: 1, y: 0.5 }}
-          />
-          <S.LineText>Ou continuar com</S.LineText>
-          <S.GradientLine
-            colors={["rgba(224, 224, 224, 1)", "rgba(224, 224, 224, 0)"]}
-            start={{ x: 0, y: 0.5 }}
-            end={{ x: 1, y: 0.5 }}
-          />
-        </S.LineContainer>
         <S.SocialButtonContainer>
           {socialButtonContent.map((item, index) => {
             return (
               <S.SocialButton key={index} index={index}>
                 {item.icon}
+                <S.SocialButtonText>Continuar com Google</S.SocialButtonText>
               </S.SocialButton>
             );
           })}
         </S.SocialButtonContainer>
+
         <S.CreateAccountContainer>
+          <S.LineContainer>
+            <S.GradientLine
+              colors={["#B4B4B4", "#FFFFFF"]}
+              start={{ x: 0, y: 0.5 }}
+              end={{ x: 1, y: 0.5 }}
+            />
+            <S.LineText>Ainda não tem conta?</S.LineText>
+            <S.GradientLine
+              colors={["#FFFFFF", "#B4B4B4"]}
+              start={{ x: 0, y: 0.5 }}
+              end={{ x: 1, y: 0.5 }}
+            />
+          </S.LineContainer>
           <S.CreateAccountText>
-            Ainda não tem conta?{" "}
             <Link href="/register">
               <S.CreateAccountTextLink>Crie já</S.CreateAccountTextLink>
             </Link>
