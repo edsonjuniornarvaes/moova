@@ -1,37 +1,37 @@
-import { AVPlaybackStatusSuccess, ResizeMode, Video } from "expo-av";
-import { useState } from "react";
+import { VideoView, useVideoPlayer } from "expo-video";
+import { useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { hideAsync } from "expo-splash-screen";
+import { useSplash } from "../contexts/SplashContext";
 
-type Props = {
-  onComplete: (status: boolean) => void;
-};
-
-function Splash({ onComplete }: Props) {
-  const [lastStatus, setLastStatus] = useState<AVPlaybackStatusSuccess>(
-    {} as AVPlaybackStatusSuccess
+function Splash() {
+  const { setSplashComplete } = useSplash();
+  const player = useVideoPlayer(
+    require("../assets/videos/splash.mp4"),
+    (player) => {
+      player.loop = false;
+      player.play();
+    }
   );
 
-  function onPlaybackStatusUpdate(status: AVPlaybackStatusSuccess) {
-    if (status.isLoaded) {
-      if (lastStatus.isLoaded !== status.isLoaded) {
-        hideAsync();
-      }
-    }
-    if (status.didJustFinish) {
-      onComplete(true);
-    }
-    setLastStatus(() => status);
-  }
+  useEffect(() => {
+    hideAsync();
+
+    const timer = setTimeout(() => {
+      setSplashComplete(true);
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [setSplashComplete]);
 
   return (
-    <Video
+    <VideoView
       style={StyleSheet.absoluteFill}
-      resizeMode={ResizeMode.COVER}
-      source={require("../assets/videos/splash.mp4")}
-      isLooping={false}
-      onPlaybackStatusUpdate={onPlaybackStatusUpdate}
-      shouldPlay={true}
+      player={player}
+      allowsFullscreen={false}
+      allowsPictureInPicture={false}
     />
   );
 }

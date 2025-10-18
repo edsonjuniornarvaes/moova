@@ -1,12 +1,12 @@
 import Splash from "@/components/Splash";
-import { useState } from "react";
+import { useSplash } from "@/contexts/SplashContext";
 import { ActivityIndicator, Text, View } from "react-native";
 import { preventAutoHideAsync } from "expo-splash-screen";
 
 preventAutoHideAsync();
 
 export default function Index() {
-  const [splashComplete, setSplashComplete] = useState(false);
+  const { splashComplete } = useSplash();
 
   return (
     <>
@@ -15,7 +15,7 @@ export default function Index() {
           <Text>Home Screen</Text>
         </View>
       ) : (
-        <Splash onComplete={setSplashComplete} />
+        <Splash />
       )}
       {/* <View
       style={{
