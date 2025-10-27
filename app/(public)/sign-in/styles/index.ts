@@ -7,7 +7,7 @@ import FacebookIconImport from "@/components/icons/facebook";
 const GoogleIcon = styled(GoogleIconImport).attrs({})``;
 const AppleIcon = styled(AppleIconImport).attrs({})``;
 const FacebookIcon = styled(FacebookIconImport).attrs({})``;
-const MoovaIcon = styled(MoovaIconImport).attrs({})``;
+const MoovaIcon = styled(MoovaIconImport).attrs({ width: 283, height: 57 })``;
 const ChevronRightIcon = styled(ChevronRightIconImport).attrs({})``;
 
 import { LinearGradient } from "expo-linear-gradient";
