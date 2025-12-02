@@ -1,17 +1,17 @@
-import ChevronRightIconImport from "@/components/icons/chevron-right";
-import MoovaIconImport from "@/components/icons/moova";
-import GoogleIconImport from "@/components/icons/google";
-import AppleIconImport from "@/components/icons/apple";
-import FacebookIconImport from "@/components/icons/facebook";
+import { LinearGradient } from "expo-linear-gradient";
+import { default as styled } from "styled-components/native";
+import { theme } from "@/theme";
+import ChevronRightIconImport from "@/presentation/icons/chevron-right";
+import MoovaIconImport from "@/presentation/icons/moova";
+import GoogleIconImport from "@/presentation/icons/google";
+import AppleIconImport from "@/presentation/icons/apple";
+import FacebookIconImport from "@/presentation/icons/facebook";
 
 const GoogleIcon = styled(GoogleIconImport).attrs({})``;
 const AppleIcon = styled(AppleIconImport).attrs({})``;
 const FacebookIcon = styled(FacebookIconImport).attrs({})``;
 const MoovaIcon = styled(MoovaIconImport).attrs({ width: 283, height: 57 })``;
 const ChevronRightIcon = styled(ChevronRightIconImport).attrs({})``;
-
-import { LinearGradient } from "expo-linear-gradient";
-import styled from "styled-components/native";
 
 const GradientContainer = styled(LinearGradient)`
   flex: 1;
@@ -40,9 +40,6 @@ const BottomContent = styled.View`
   left: 0;
   right: 0;
   padding: 0 16px 40px 16px;
-  /* background-color: rgba(255, 255, 255, 0.95); */
-  /* border-top-left-radius: 20px; */
-  /* border-top-right-radius: 20px; */
 `;
 
 const TitleContainer = styled.View`
@@ -50,14 +47,14 @@ const TitleContainer = styled.View`
 `;
 
 const Title = styled.Text`
-  font-size: 16px;
-  color: #fff;
+  font-size: ${theme.fonts.size.base}px;
+  color: ${theme.colors.text.white};
   text-align: center;
-  font-family: Orbitron-Regular;
+  font-family: ${theme.fonts.family.regular};
 `;
 
 const ButtonContainer = styled.View`
-  /* padding: 20px 0; */
+  margin-bottom: 16px;
 `;
 
 const Button = styled.TouchableOpacity`
@@ -65,17 +62,17 @@ const Button = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
 
-  height: 48px;
-  border-radius: 12px;
-  background-color: #009b8e;
+  height: ${theme.sizes.button.height}px;
+  border-radius: ${theme.borderRadius.md}px;
+  background-color: ${theme.colors.button.primary};
 `;
 
 const ButtonTitle = styled.Text`
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
+  font-size: ${theme.fonts.size.base}px;
+  font-weight: ${theme.fonts.weight.bold};
+  color: ${theme.colors.button.text};
   text-align: center;
-  font-family: Orbitron-SemiBold;
+  font-family: ${theme.fonts.family.semiBold};
 `;
 
 const ButtonIconContainer = styled.View`
@@ -103,32 +100,41 @@ const SocialButtonContainer = styled.View`
   justify-content: center;
   flex-direction: row;
 
-  padding: 24px 0;
+  padding: 16px 0 24px 0;
 `;
 
-const SocialButton = styled.View<{ index: number }>`
+const SocialButton = styled.TouchableOpacity<{ index: number }>`
   align-items: center;
   justify-content: center;
   flex-direction: row;
 
   width: 100%;
-  height: 48px;
+  height: ${theme.sizes.button.height}px;
   margin: 0;
-  border-radius: 12px;
-  background-color: #fff;
-  padding: 0 16px;
+  border-radius: ${theme.borderRadius.md}px;
+  background-color: ${theme.colors.button.secondary};
+  padding: 0 ${theme.spacing.base}px;
 `;
 
 const SocialButtonText = styled.Text`
-  font-size: 16px;
-  font-weight: 600;
-  color: #222222;
-  margin-left: 12px;
-  font-family: Orbitron-SemiBold;
+  font-size: ${theme.fonts.size.base}px;
+  font-weight: ${theme.fonts.weight.semiBold};
+  color: ${theme.colors.text.primary};
+  margin-left: ${theme.spacing.md}px;
+  font-family: ${theme.fonts.family.semiBold};
 `;
 
 const CreateAccountContainer = styled.View`
   align-items: center;
+  padding-top: 8px;
+`;
+
+const CreateAccountQuestionText = styled.Text`
+  font-size: ${theme.fonts.size.sm}px;
+  color: ${theme.colors.text.white};
+  text-align: center;
+  margin-bottom: ${theme.spacing.sm}px;
+  font-family: ${theme.fonts.family.regular};
 `;
 
 const CreateAccountText = styled.Text`
@@ -137,12 +143,11 @@ const CreateAccountText = styled.Text`
 `;
 
 const CreateAccountTextLink = styled.Text`
-  font-size: 12px;
-  font-weight: bold;
-  text-decoration-line: underline;
-  padding-left: 2px;
-  color: #fff;
-  font-family: Orbitron-SemiBold;
+  font-size: ${theme.fonts.size.sm}px;
+  font-weight: ${theme.fonts.weight.bold};
+  text-align: center;
+  color: ${theme.colors.text.white};
+  font-family: ${theme.fonts.family.semiBold};
 `;
 
 export {
@@ -167,6 +172,8 @@ export {
   SocialButton,
   SocialButtonText,
   CreateAccountContainer,
+  CreateAccountQuestionText,
   CreateAccountText,
   CreateAccountTextLink,
 };
+

@@ -1,4 +1,4 @@
-import Splash from "@/components/Splash";
+import Splash from "@/presentation/components/Splash";
 import { useSplash } from "@/contexts/SplashContext";
 import { preventAutoHideAsync } from "expo-splash-screen";
 

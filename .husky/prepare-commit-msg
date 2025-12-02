@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Ignora se for merge, rebase, squash ou cherry-pick
+if [ -n "$2" ]; then
+  exit 0
+fi
+
+# Se não houver mensagem, mostra menu interativo do Commitizen
+if [ -z "$(grep -v '^#' "$1" 2>/dev/null | grep -v '^$')" ]; then
+  exec < /dev/tty
+  node_modules/.bin/cz --hook --message-file "$1" 2>&1 || true
+fi

@@ -5,6 +5,7 @@ import * as SecureStore from "expo-secure-store";
 import { StatusBar } from "expo-status-bar";
 import { SplashProvider, useSplash } from "../contexts/SplashContext";
 import { loadFonts } from "../fonts";
+import ReduxProvider from "../providers/ReduxProvider";
 
 const publishKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
@@ -12,14 +13,14 @@ const tokenCache = {
   async getToken(key: string) {
     try {
       return SecureStore.getItemAsync(key);
-    } catch (err) {
+    } catch {
       return null;
     }
   },
   async saveToken(key: string, value: string) {
     try {
       return SecureStore.setItemAsync(key, value);
-    } catch (err) {
+    } catch {
       return;
     }
   },
@@ -62,10 +63,10 @@ const InitialLayout = () => {
       console.log("Redirecting to /home");
       router.replace("/home");
     } else if (!isSignedIn) {
-      console.log("Redirecting to /sign-in/view");
-      router.replace("/sign-in/view");
+      console.log("Redirecting to /sign-in");
+      router.replace("/sign-in");
     }
-  }, [isSignedIn, splashComplete, fontsLoaded]);
+  }, [isLoaded, isSignedIn, splashComplete, fontsLoaded, segments, router]);
 
   if (!fontsLoaded) {
     return null;
@@ -76,11 +77,13 @@ const InitialLayout = () => {
 
 export default function RootLayout() {
   return (
-    <SplashProvider>
-      <ClerkProvider publishableKey={publishKey} tokenCache={tokenCache}>
-        <StatusBar style="light" />
-        <InitialLayout />
-      </ClerkProvider>
-    </SplashProvider>
+    <ReduxProvider>
+      <SplashProvider>
+        <ClerkProvider publishableKey={publishKey} tokenCache={tokenCache}>
+          <StatusBar style="light" />
+          <InitialLayout />
+        </ClerkProvider>
+      </SplashProvider>
+    </ReduxProvider>
   );
 }
