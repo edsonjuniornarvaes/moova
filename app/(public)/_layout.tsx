@@ -11,6 +11,12 @@ export default function PublicLayout() {
       }}
     >
       <Stack.Screen
+        name="sign-in/index"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
         name="sign-in/view"
         options={{
           headerShown: false,
