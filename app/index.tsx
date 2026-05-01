@@ -1,18 +1,20 @@
-import Splash from "@/presentation/components/Splash";
-import { useSplash } from "@/contexts/SplashContext";
-import { preventAutoHideAsync } from "expo-splash-screen";
-
-preventAutoHideAsync();
+import { useAuth } from "@/contexts/AuthContext";
+import { useLinkingURL } from "expo-linking";
+import { Redirect } from "expo-router";
 
 export default function Index() {
-  const { splashComplete } = useSplash();
+  const { session, loading } = useAuth();
+  const linkingUrl = useLinkingURL();
 
-  // Se a splash não estiver completa, mostra a splash
-  if (!splashComplete) {
-    return <Splash />;
+  if (loading) {
+    return null;
   }
 
-  // Se a splash estiver completa, não mostra nada
-  // O _layout.tsx vai redirecionar automaticamente
-  return null;
+  // Cold start com exp://.../auth/callback#... — evita ir à entry antes de processar tokens.
+  if (linkingUrl?.includes("auth/callback")) {
+    return <Redirect href="/auth/callback" />;
+  }
+
+  if (session) return <Redirect href="/(tabs)/home" />;
+  return <Redirect href="/(auth)/entry" />;
 }

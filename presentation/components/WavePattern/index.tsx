@@ -34,3 +34,4 @@ export default function WavePattern({ opacity = 0.12 }: WavePatternProps) {
   );
 }
 
+

@@ -48,3 +48,4 @@ export function useWavePatternViewModel({ opacity = 0.12 }: WavePatternProps) {
   };
 }
 
+

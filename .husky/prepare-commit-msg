@@ -11,3 +11,4 @@ if [ -z "$(grep -v '^#' "$1" 2>/dev/null | grep -v '^$')" ]; then
   exec < /dev/tty
   node_modules/.bin/cz --hook --message-file "$1" 2>&1 || true
 fi
+
