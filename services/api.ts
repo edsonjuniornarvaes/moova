@@ -1,3 +1,5 @@
+import { Sentry } from "@/lib/sentry";
+
 /**
  * Configuração base da API
  * Centraliza a configuração do cliente HTTP
@@ -56,6 +58,7 @@ class ApiService {
       const data = await response.json();
       return data as T;
     } catch (error) {
+      Sentry.captureException(error, { tags: { flow: "api-request" } });
       console.error("API request failed:", error);
       throw error;
     }

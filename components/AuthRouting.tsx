@@ -1,4 +1,5 @@
 import { useAuth } from "@/contexts/AuthContext";
+import { Sentry } from "@/lib/sentry";
 import { supabase } from "@/lib/supabase";
 import * as Linking from "expo-linking";
 import { useRouter, useSegments } from "expo-router";
@@ -29,11 +30,16 @@ export function AuthRouting() {
       }
     } else if (!session && inTabs) {
       // O contexto pode atrasar após setSession no OAuth/deep link; confirma no cliente.
-      void supabase.auth.getSession().then(({ data: { session: live } }) => {
-        if (!live) {
-          router.replace("/(auth)/entry");
-        }
-      });
+      void supabase.auth
+        .getSession()
+        .then(({ data: { session: live } }) => {
+          if (!live) {
+            router.replace("/(auth)/entry");
+          }
+        })
+        .catch((e) => {
+          Sentry.captureException(e, { tags: { flow: "auth-routing" } });
+        });
     }
   }, [session, loading, segments, router]);
 
