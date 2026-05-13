@@ -5,11 +5,11 @@ import * as Linking from "expo-linking";
 import { useRouter, useSegments } from "expo-router";
 import { useEffect } from "react";
 
-const APP_SCHEME = "clubedaclutch";
+const APP_SCHEME = "moova";
 
 /**
  * entry + sessão → home sem overlay. Login/OAuth usam PostAuthNavigation (loading global).
- * Corrige deep links vazios tipo clubedaclutch:///.
+ * Corrige deep links vazios tipo moova:///.
  */
 export function AuthRouting() {
   const { session, loading } = useAuth();

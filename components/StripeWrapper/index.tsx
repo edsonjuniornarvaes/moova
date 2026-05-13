@@ -10,11 +10,15 @@ export function StripeWrapper({
   publishableKey,
   children,
 }: StripeWrapperProps) {
+  if (!publishableKey) {
+    return <>{children}</>;
+  }
+
   return (
     <StripeProvider
       publishableKey={publishableKey}
-      merchantIdentifier="merchant.com.clubedaclutch"
-      urlScheme="clubedaclutch"
+      merchantIdentifier="merchant.com.moova"
+      urlScheme="moova"
     >
       {children as ReactElement}
     </StripeProvider>

@@ -2,7 +2,7 @@ import { Sentry } from "@/lib/sentry";
 
 /**
  * Garante que deep links de auth (Supabase) abram a rota correta.
- * O parâmetro `path` pode ser URL completa (exp://... ou clubedaclutch://...).
+ * O parâmetro `path` pode ser URL completa (exp://... ou moova://...).
  */
 export function redirectSystemPath({
   path,

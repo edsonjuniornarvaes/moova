@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 import { View } from "react-native";
 
 /**
- * Trata cold start / deep link: clubedaclutch://auth/callback#access_token=…
+ * Trata cold start / deep link: moova://auth/callback#access_token=…
  * (o fluxo com WebBrowser costuma não passar aqui, mas garante rota válida).
  */
 export default function AuthOAuthCallback() {

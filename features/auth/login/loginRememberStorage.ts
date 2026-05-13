@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const SAVED_EMAIL_KEY = "@clubedaclutch/savedLoginEmail";
+const SAVED_EMAIL_KEY = "@moova/savedLoginEmail";
 
 export async function loadSavedLoginEmail(): Promise<string | null> {
   try {

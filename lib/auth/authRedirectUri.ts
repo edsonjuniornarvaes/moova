@@ -1,14 +1,14 @@
 import { makeRedirectUri } from "expo-auth-session";
 import { Platform } from "react-native";
 
-const APP_SCHEME = "clubedaclutch";
+const APP_SCHEME = "moova";
 export const AUTH_CALLBACK_PATH = "auth/callback";
 
 /**
  * Redirect que o Supabase deve aceitar (Redirect URLs) e que o app envia em OAuth / email.
  * - Web: makeRedirectUri + scheme
  * - Expo Go / Dev Client: exp://.../--/auth/callback
- * - Build nativo / standalone: clubedaclutch://auth/callback
+ * - Build nativo / standalone: moova://auth/callback
  */
 export function resolveAuthCallbackRedirectUri(): string {
   if (Platform.OS === "web") {

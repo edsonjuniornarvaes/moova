@@ -10,7 +10,7 @@ import Reactotron from "reactotron-react-native";
  */
 const reactotron = Reactotron.setAsyncStorageHandler(AsyncStorage)
   .configure({
-    name: "clubedaclutch",
+    name: "moova",
     ...(process.env.EXPO_PUBLIC_REACTOTRON_HOST
       ? { host: process.env.EXPO_PUBLIC_REACTOTRON_HOST }
       : {}),
