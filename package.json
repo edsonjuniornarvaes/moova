@@ -9,13 +9,11 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
+    "test:ci": "jest --ci --passWithNoTests",
     "lint": "expo lint",
     "prepare": "husky",
     "commit": "git-cz",
     "commitlint": "commitlint --edit"
-  },
-  "jest": {
-    "preset": "jest-expo"
   },
   "dependencies": {
     "@babel/preset-env": "^7.25.0",
