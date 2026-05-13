@@ -83,7 +83,10 @@
       ],
       "expo-sqlite",
       "expo-font",
-      "expo-localization"
+      "expo-localization",
+      "expo-secure-store",
+      "expo-video",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,

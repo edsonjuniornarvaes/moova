@@ -102,7 +102,7 @@ export function LoadingScreen() {
     <ScreenLayout>
       <ActivityIndicator
         size="small"
-        color={theme.colors.gold}
+        color={theme.colors.brand}
         style={s.indicator}
       />
     </ScreenLayout>

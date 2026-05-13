@@ -69,8 +69,8 @@ export default function Index() {
           <View style={s.sheet}>
             <LinearGradient
               colors={[
-                "rgba(254, 186, 67, 0.1)",
-                "rgba(254, 186, 67, 0.02)",
+                "rgba(0, 201, 255, 0.1)",
+                "rgba(0, 201, 255, 0.02)",
                 "transparent",
               ]}
               locations={[0, 0.5, 1]}
@@ -95,7 +95,7 @@ export default function Index() {
               {oauthLoading ? (
                 <ActivityIndicator
                   size="small"
-                  color={theme.colors.gold}
+                  color={theme.colors.brand}
                   style={s.oauthSpinner}
                 />
               ) : (

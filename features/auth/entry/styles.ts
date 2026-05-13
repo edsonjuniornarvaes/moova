@@ -116,7 +116,7 @@ export const s = StyleSheet.create({
     color: "rgba(255, 255, 255, 0.5)",
   },
   signupLinkHighlight: {
-    color: theme.colors.gold,
+    color: theme.colors.brand,
     fontWeight: "700",
   },
   buttonDisabled: {

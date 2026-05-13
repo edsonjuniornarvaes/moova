@@ -42,7 +42,7 @@ export default function ResetPasswordScreen() {
       <View style={s.root}>
         <SafeAreaView style={s.safeArea} edges={["left", "right"]}>
           <View style={[s.mainColumn, { justifyContent: "center", flex: 1 }]}>
-            <ActivityIndicator size="large" color={theme.colors.gold} />
+            <ActivityIndicator size="large" color={theme.colors.brand} />
           </View>
         </SafeAreaView>
       </View>

@@ -106,15 +106,15 @@ export const s = StyleSheet.create({
     flexShrink: 0,
   },
   goldButton: {
-    backgroundColor: theme.colors.gold,
+    backgroundColor: theme.colors.brand,
     borderRadius: theme.radius.buttonLg,
     paddingVertical: 18,
     alignItems: "center",
     justifyContent: "center",
     minHeight: 52,
     borderWidth: 1,
-    borderColor: "rgba(254, 186, 67, 0.5)",
-    shadowColor: theme.colors.goldShadow,
+    borderColor: "rgba(0, 201, 255, 0.5)",
+    shadowColor: theme.colors.brandShadow,
     shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 0.32,
     shadowRadius: 14,
@@ -135,7 +135,7 @@ export const s = StyleSheet.create({
     alignItems: "center",
   },
   loginLinkHighlight: {
-    color: theme.colors.gold,
+    color: theme.colors.brand,
     fontWeight: "700",
   },
   pressed: {

@@ -25,7 +25,7 @@ export interface SignupDimensions {
 }
 
 export const SIGNUP_CONSTANTS = {
-  GOLD: theme.colors.gold,
+  BRAND: theme.colors.brand,
   MIN_PASSWORD_LENGTH: 6,
   TIMEOUT_MS: 20000,
 } as const;
